@@ -92,4 +92,17 @@
     </div>
   </div>
 </div>
+
+<br /><br /><br /> <br />
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>&copy; {{ date('Y') }} Design and create by OOREDOO. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
 @endsection
+

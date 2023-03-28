@@ -3,6 +3,7 @@
 use App\Http\Controllers\CandidatConcoursController;
 use App\Http\Controllers\EtablissementController;
 use App\Http\Controllers\QrCodeController;
+use App\Http\Controllers\TransactionsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,10 @@ Route::post('/candidat', [CandidatsController::class, 'store'])->name('candidats
 Route::post('/candidat', [CandidatsController::class, 'create'])->name('candidats.create');
 Route::post('/etablissement', [EtablissementController::class, 'store'])->name('etablissements.store');
 Route::post('/voter/{id}', [App\Http\Controllers\CandidatsController::class, 'voter'])->name('voter');
+
+Route::get('/transactions', [App\Http\Controllers\TransactionsController::class, 'index'])->name('transactions.index');
+Route::get('/transactions/store', [App\Http\Controllers\TransactionsController::class, 'store'])->name('transactions.store');
+Route::get('/transactions/create', [App\Http\Controllers\TransactionsController::class, 'create'])->name('transactions.create');
 
 Route::get('/candidat/filter', 'CandidatsController@filter')->name('candidat.filter');
 

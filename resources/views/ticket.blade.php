@@ -46,16 +46,21 @@
         <p>Election: Miss & Master</p>
         <p>Etablissement: Université de Ngaoundéré</p>
         <p>Transaction ID: {{ $momoTransactionId }}</p>
-        <p class="code">ABC123</p>
+        <p class="code">
+        <div class="col-md-12">
+            <p>&copy; {{ date('Y') }} Design and create by OOREDOO. All rights reserved.</p>
+        </div>
+        </p>
     </div>
 
     <button class="btn btn-primary" onclick="printTicket()">Print Ticket</button>
+    
 
-<script>
-function printTicket() {
-  window.print();
-}
-</script>
+    <script>
+        function printTicket() {
+            window.print();
+        }
+    </script>
 
 </body>
 

@@ -301,12 +301,12 @@
         <label for="type_filter" class="mr-2"><i class="fas fa-graduation-cap"></i> Type</label>
         <select class="form-control" id="type_filter">
           <option value="{{$type}}">{{$type}}</option>
-          <!-- @if($type == 'Master') -->
+          @if($type == 'Master')
           <option value="Miss">Miss</option>
-          <!-- @endif
-          @if($type == 'Miss') -->
+          @endif
+          @if($type == 'Miss')
           <option value="Master">Master</option>
-          <!-- @endif -->
+          @endif
         </select>
       </div>
     </form>
@@ -543,6 +543,15 @@
     // });
   </script>
 
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>&copy; {{ date('Y') }} Design and create by OOREDOO. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 
 </html>

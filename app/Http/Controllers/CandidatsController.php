@@ -197,7 +197,12 @@ class CandidatsController extends Controller
     {
         // Get the number MOMO from the request
         $transactionId = $request->input('numero_momo');
-        $nombre_voix = $request->input('nombre_voix');
+        $exists = DB::table('paiements')
+              ->where('votant_numero', $transactionId)
+              ->exists();
+
+if (!$exists) {
+    $nombre_voix = $request->input('nombre_voix');
         $numero_momo = '46733123453';
 
         // Get the ID of the candidat to vote for
@@ -313,6 +318,10 @@ class CandidatsController extends Controller
             // Redirect back with error message
             return redirect()->back()->with('error', 'Transaction failed');
         }
+} else {
+    return redirect()->back()->with('error', 'La Transaction Id copié exsite déja/ The Transaction ID already exist');
+}
+        
     }
 
     public function retry(){

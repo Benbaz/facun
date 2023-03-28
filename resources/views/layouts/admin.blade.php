@@ -63,6 +63,19 @@
             </a>
         </li>
 
+        <li class="nav-item dropdown {{ Nav::isResource('transactions') }}">
+                <a class="nav-link dropdown-toggle" href="#" id="electionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-calendar-alt"></i>
+                    <span>{{ __('Transactions') }}</span>
+                </a>
+                <ul>
+                <!-- <div class="dropdown-menu" aria-labelledby="electionsDropdown"> -->
+                    <li><a class="dropdown-item {{ Nav::isRoute('transactions.index') }}" href="{{ route('transactions.index') }}">{{ __('Voir') }}</a></li>
+                    <li><a class="dropdown-item {{ Nav::isRoute('transactions.create') }}" href="{{ route('transactions.create') }}">{{ __('Ajouter') }}</a></li>
+                <!-- </div> -->
+                </ul>
+        </li>
+
         <!-- Nav Item - Candidat -->
         <li class="nav-item dropdown {{ Nav::isResource('candidats') }}">
                 <a class="nav-link dropdown-toggle" href="#" id="electionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -76,6 +89,7 @@
                 <!-- </div> -->
                 </ul>
         </li>
+
         <!-- Nav Item - Elections -->
         <li class="nav-item dropdown {{ Nav::isResource('elections') }}">
                 <a class="nav-link dropdown-toggle" href="#" id="electionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -105,7 +119,7 @@
         <li class="nav-item dropdown {{ Nav::isResource('candidat_concours') }}">
                 <a class="nav-link dropdown-toggle" href="#" id="electionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-fw fa-calendar-alt"></i>
-                    <span>{{ __('Etablissements') }}</span>
+                    <span>{{ __('Candiats EGCIM') }}</span>
                 </a>
                 <ul>
                     <li><a class="dropdown-item {{ Nav::isRoute('etablissement.index') }}" href="{{ route('candidat_concours.index') }}">{{ __('Voir') }}</a></li>
