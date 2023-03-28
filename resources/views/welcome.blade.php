@@ -269,6 +269,11 @@
   </div>
   <!-- <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> -->
   <br />
+  @if(session('error'))
+   <div class="alert alert-danger">
+      {{ session('error') }}
+   </div>
+@endif
     <p>
     <h3 class="text-center text-black font-weight-bold mb-4">Liste des candidats en compétition</h3>
   </p>
