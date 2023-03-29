@@ -24,7 +24,9 @@
                   @foreach ($candidates as $candidate)
                   <tr>
                     <td>
-                      <img src="{{ asset('candidat/photos/' . $candidate->photo) }}" alt="Photo de {{ $candidate->nom }} {{ $candidate->prenom }}" width="50" height="50">
+                      <a href="#" data-toggle="modal" data-target="#imageModal" data-candidat-nom="{{ $candidate->nom }}" data-image-src="{{ asset('candidat/photos/' . $candidate->photo) }}">
+                        <img src="{{ asset('candidat/photos/' . $candidate->photo) }}" class="card-img-top" alt="{{ $candidate->nom }}" width="150" height="150">
+                      </a>
                       {{ $candidate->nom }} {{ $candidate->prenom }}
                     </td>
                     <td>{{ $candidate->etablissement }}</td>
@@ -67,8 +69,10 @@
                   @foreach ($candidatesMaster as $candidate)
                   <tr>
                     <td>
-                      <img src="{{ asset('candidat/photos/' . $candidate->photo) }}" alt="Photo de {{ $candidate->nom }} {{ $candidate->prenom }}" width="50" height="50">
-                      {{ $candidate->nom }} {{ $candidate->prenom }}
+                      <a href="#" data-toggle="modal" data-target="#imageModal" data-candidat-nom="{{ $candidate->nom }}" data-image-src="{{ asset('candidat/photos/' . $candidate->photo) }}">
+                        <img src="{{ asset('candidat/photos/' . $candidate->photo) }}" class="card-img-top" alt="{{ $candidate->nom }}" width="150" height="150">
+                      </a>
+                      <b>{{ $candidate->nom }} {{ $candidate->prenom }}</b>
                     </td>
                     <td>{{ $candidate->etablissement }}</td>
                     <td>{{ $candidate->score }}</td>
@@ -104,5 +108,22 @@
   </div>
 </footer>
 
-@endsection
+<!-- display the candidat picture in a modal -->
 
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="" class="img-fluid mx-auto d-block" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+@endsection

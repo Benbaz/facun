@@ -319,7 +319,7 @@ if (!$exists) {
             return redirect()->back()->with('error', 'Transaction failed');
         }
 } else {
-    return redirect()->back()->with('error', 'La Transaction Id copié exsite déja/ The Transaction ID already exist');
+    return redirect()->back()->with('error', 'La Transaction Id copié exsite déja/ The Transaction ID already exists');
 }
         
     }

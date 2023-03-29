@@ -3,10 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>Ticket</title>
     <style>
         .ticket {
-            width: 300px;
+            width: 500px;
             background-color: #fff;
             border: 2px solid #f9a825;
             padding: 20px;
@@ -22,6 +26,9 @@
             text-align: center;
             text-transform: uppercase;
             letter-spacing: 2px;
+        }
+        .ticket img {
+            text-align: center;
         }
 
         .ticket p {
@@ -39,22 +46,25 @@
 <body>
     <div class="ticket">
         <h2>Ticket</h2>
-        <p>{{ $candidat->nom }} Vous remercie de votre soutient!</p>
+        <center>
+        <img src="{{ asset('candidat/photos/' . $candidat->photo) }}" alt="Photo de {{ $candidat->nom }} {{ $candidat->prenom }}" width="100" height="100">
+        </center>
+        <p><b>{{ $candidat->nom }} {{ $candidat->prenom }}</b> Vous remercie de votre soutient!</p>
         <p>Date: {{ date('d/m/Y H:i:s') }}</p>
-        <p>Amount: {{ $transactionAmount }} XAF</p>
-        <p>Candidate: {{ $candidat->nom }}</p>
-        <p>Election: Miss & Master</p>
-        <p>Etablissement: Université de Ngaoundéré</p>
-        <p>Transaction ID: {{ $momoTransactionId }}</p>
+        <p>Candidat: {{ $candidat->nom }} {{ $candidat->prenom }}</p>
+        <p>Evènement: FACUN élection Miss & Master de l'université de Ngaoundéré</p>
+        <p><b>Jeux universitaire organisé par l'université de Ngaoundéré </b></p>
+        <!-- <p>Transaction ID: {{ $momoTransactionId }}</p> -->
         <p class="code">
         <div class="col-md-12">
-            <p>&copy; {{ date('Y') }} Design and create by OOREDOO. All rights reserved.</p>
+            <p>&copy; {{ date('Y') }} create by OOREDOO. All rights reserved.</p>
         </div>
         </p>
     </div>
 
     <button class="btn btn-primary" onclick="printTicket()">Print Ticket</button>
-    
+    <br /> <br />
+    <a href="{{ url('/') }}" class="btn btn-warning font-weight-bold mr-2" >Retour a l'accuille / Back to home</a>
 
     <script>
         function printTicket() {
